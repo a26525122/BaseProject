@@ -11,7 +11,7 @@ public class Suggest {
   private int reply = 0;
   private Scanner scan;
   private String[] suggestFri;
-  
+
   public void showWho() {
     System.out.println("--建議好友");
     printSuggest();
@@ -20,16 +20,16 @@ public class Suggest {
     do {
       scan = new Scanner(System.in);
       num = scan.nextInt();
-      if(num < 0 || num > count) {
+      if (num < 0 || num > count) {
         System.out.println("輸入錯誤，請重新輸入!");
       }
-    }while(num < 0 || num > count);
+    } while (num < 0 || num > count);
     reply(num);
   }
-  
+
   public void reply(int num) {
-    if(num == 0) {
-      
+    if (num == 0) {
+
     } else {
       System.out.println("--是否加入好友? ( YES/NO/NotNow )");
       String temp = scan.next();
@@ -49,31 +49,34 @@ public class Suggest {
       }
     }
   }
-  
+
   public void delete(int num) {
     num--;
-    for(int i=num ; i<count ;i++) {
-      suggestFri[num]=suggestFri[num+1];
-    }
+
+    suggestFri[num] = suggestFri[num + 1];
+    suggestFri[num + 1] = suggestFri[num + 2];
+    suggestFri[num + 2] = suggestFri[num + 3];
+    suggestFri[num + 3] = suggestFri[num + 4];
+    suggestFri[num + 4] = suggestFri[num + 5];
     count--;
   }
 
   public boolean confirm(String temp) {
     check = false;
-    while(!check) {
+    while (!check) {
       if (temp.equals("YES") || temp.equals("NO") || temp.equals("NotNow")) {
         check = true;
-        if(temp.equals("YES")) {
+        if (temp.equals("YES")) {
           reply = 1;
-        }else if(temp.equals("NO")){
+        } else if (temp.equals("NO")) {
           reply = 2;
-        }else {
+        } else {
           reply = 3;
         }
       } else {
         System.out.println("--輸入錯誤，請重新輸入!");
         System.out.println("---------------------------");
-       ;
+        temp = scan.next();
         check = false;
       }
     }
@@ -83,10 +86,10 @@ public class Suggest {
       return false;
     }
   }
-  
+
   public void readToString() {
-    File file = new File("C:/Users/User/eclipse-workspace/Project/suggest.txt");
-    Long filelength = file.length(); 
+    File file = new File("D:/JAVA/Project/suggest.txt");
+    Long filelength = file.length();
     byte[] filecontent = new byte[filelength.intValue()];
     try {
       FileInputStream in = new FileInputStream(file);
@@ -100,18 +103,18 @@ public class Suggest {
 
     suggestFri = new String(filecontent).split("\r\n");
     count = randomSug();
-    
+
   }
-  
+
   public void printSuggest() {
-    for(int i=0 ;i<count; i++) {
-      System.out.println((i+1)+": "+suggestFri[i]);
+    for (int i = 0; i < count; i++) {
+      System.out.println((i + 1) + ": " + suggestFri[i]);
     }
   }
-  
+
   public int randomSug() {
     Random rand = new Random();
-    int ranNum = rand.nextInt(5)+1;
+    int ranNum = rand.nextInt(6) + 1;
     return ranNum;
   }
 }

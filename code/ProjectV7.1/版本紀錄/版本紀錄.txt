@@ -19,3 +19,4 @@ Project_V6.3 -> ivite新增好友名單列表 ，未設置輸入不存在的數字無法執行的案例
 Project_V6.4 -> 整合(V_6.2) 及  (V_6.3) ，更新txt檔案
 Project_V6.5 -> 功能3掃描QR CODE 偷工減料版
 Project_V7.0 -> 修正(V_6.4)的bug ， (V_6.5)偷工減料版->完整版
+Project_V7.1 -> 修正Suggest 重大BUG

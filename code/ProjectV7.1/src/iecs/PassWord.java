@@ -13,7 +13,7 @@ public class PassWord {
   private Scanner scan;
 
   public void readToString() {
-    File file = new File("C:/Users/User/eclipse-workspace/Project/password.txt");
+    File file = new File("D:/JAVA/Project/password.txt");
     Long filelength = file.length();
     byte[] filecontent = new byte[filelength.intValue()];
     try {
