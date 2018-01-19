@@ -17,6 +17,9 @@ public class FriendsInf {
     while ((str = br.readLine()) != null) {
       System.out.println(str);
     }
+   InfQrcode infqrcode = new InfQrcode();
+   infqrcode.LoadFile();
+   infqrcode.SetTable();
     do {
       back();
       scan = new Scanner(System.in);
@@ -33,6 +36,9 @@ public class FriendsInf {
     while ((str2 = br2.readLine()) != null) {
       System.out.println(str2);
     }
+    InfQrcode infqrcode = new InfQrcode();
+    infqrcode.LoadFile();
+    infqrcode.SetTable();
     do {
       back();
       scan = new Scanner(System.in);
@@ -49,6 +55,9 @@ public class FriendsInf {
     while ((str2 = br2.readLine()) != null) {
       System.out.println(str2);
     }
+    InfQrcode infqrcode = new InfQrcode();
+    infqrcode.LoadFile();
+    infqrcode.SetTable();
     do {
       back();
       scan = new Scanner(System.in);
@@ -65,6 +74,9 @@ public class FriendsInf {
     while ((str2 = br2.readLine()) != null) {
       System.out.println(str2);
     }
+    InfQrcode infqrcode = new InfQrcode();
+    infqrcode.LoadFile();
+    infqrcode.SetTable();
     do {
       back();
       scan = new Scanner(System.in);
@@ -81,6 +93,9 @@ public class FriendsInf {
     while ((str2 = br2.readLine()) != null) {
       System.out.println(str2);
     }
+    InfQrcode infqrcode = new InfQrcode();
+    infqrcode.LoadFile();
+    infqrcode.SetTable();
     do {
       back();
       scan = new Scanner(System.in);

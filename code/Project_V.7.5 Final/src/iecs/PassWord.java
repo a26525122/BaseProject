@@ -11,6 +11,7 @@ public class PassWord {
   private String id;
   private String password;
   private Scanner scan;
+  private boolean login;
 
   public void readToString() {
     File file = new File("D:/JAVA/Project/password.txt");
@@ -30,16 +31,11 @@ public class PassWord {
     password = passwordTxt[1];
   }
 
-  /*
-   * public String getId() { return id; }
-   * 
-   * public String getPassword() { return password; }
-   */
+  public void checkin() {
 
-  public void check() {
     String ScanId = "";
     String ScanPassword = "";
-    boolean login;
+
     do {
       login = false;
       System.out.println("--請輸入帳號密碼");
@@ -47,13 +43,19 @@ public class PassWord {
       scan = new Scanner(System.in);
       ScanId = scan.nextLine();
       System.out.println("--密碼:");
+      scan = new Scanner(System.in);
       ScanPassword = scan.nextLine();
-      if (ScanId.equals(id) && ScanPassword.equals(password)) {
-        System.out.println("--歡迎登入!");
-        login = true;
-      } else {
-        System.out.println("--帳號密碼輸入錯誤，請重新輸入!");
-      }
+      check(ScanId, ScanPassword);
     } while (login == false);
+  }
+
+  public void check(String ScanId, String ScanPassword) {
+    if (ScanId.equals(id) && ScanPassword.equals(password)) {
+      System.out.println("--歡迎登入!");
+      login = true;
+    } else {
+      System.out.println("--帳號密碼輸入錯誤，請重新輸入!");
+    }
+
   }
 }

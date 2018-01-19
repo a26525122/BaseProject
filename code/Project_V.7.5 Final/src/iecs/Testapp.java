@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import static org.junit.Assert.*;
+
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class Testapp {
@@ -57,6 +59,7 @@ public class Testapp {
    * 
    * @throws IOException
    */
+  @Ignore
   @Test
   public final void testFriends() throws IOException { // Prepare to capture output
     PrintStream originalOut = System.out;
@@ -68,8 +71,9 @@ public class Testapp {
     String separator = System.getProperty("line.separator");
     Friends fri = new Friends();
     int num = 6;
+    Invite.frined = 1;
     fri.show(num);
-    assertEquals("--輸入錯誤，請重新輸入!" + separator, os.toString());
+    assertEquals("--輸入錯誤，請重新輸入!" +separator +"---------------------------"+separator+"--好友名單:"+separator, os.toString());
 
     // Restore normal operation
     System.setOut(originalOut);
@@ -120,6 +124,24 @@ public class Testapp {
     boolean ans = false;
 
     assertEquals(ans, reply.confirm("NO"));
+
+    // Restore normal operation
+    System.setOut(originalOut);
+  }
+  @Test
+  public final void testPassWord() { // Prepare to capture output
+    PrintStream originalOut = System.out;
+    OutputStream os = new ByteArrayOutputStream();
+    PrintStream ps = new PrintStream(os);
+    System.setOut(ps);
+
+    // Perform tests
+    String separator = System.getProperty("line.separator");
+    PassWord password = new PassWord();
+    
+    password.check("D0542426","19971110");
+   
+    assertEquals("--帳號密碼輸入錯誤，請重新輸入!" + separator, os.toString());
 
     // Restore normal operation
     System.setOut(originalOut);

@@ -11,7 +11,7 @@ public class App {
   public void Login() throws IOException {
     PassWord loginApp = new PassWord();
     loginApp.readToString();
-    loginApp.check();
+    loginApp.checkin();
     list();
     num = scan.nextInt();
     whatToDo(num);

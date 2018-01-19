@@ -35,7 +35,7 @@ public class QrCode {
     jf.getContentPane().add(scrollPane);
     jf.pack();
     jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    jf.setTitle("QRcode" + image.getWidth() + " x " + image.getHeight());
+    jf.setTitle("¦n¤ÍQRcode");
     jf.setLocationRelativeTo(null);
     jf.setVisible(true);
   }
