@@ -1,12 +1,13 @@
 package iecs;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
 
   private static Scanner scan;
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
     boolean cont = true;
     App app = new App();
     while (cont) {
@@ -30,5 +31,4 @@ public class Main {
       }
     }
   }
-
 }
