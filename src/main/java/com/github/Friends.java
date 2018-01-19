@@ -1,5 +1,4 @@
-package iecs;
-
+package github;
 import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.FileReader;

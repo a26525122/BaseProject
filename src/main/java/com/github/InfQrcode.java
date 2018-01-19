@@ -1,18 +1,15 @@
-package iecs;
-
+package github;
 import java.io.*;
 import javax.swing.*;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 
-public class QrCode {
-  public static int friendQR = 0 ;
+public class InfQrcode {
   String Filename;
   BufferedImage image;
   JFrame jf;
-  
-  
-  public QrCode() {
+
+  public InfQrcode() {
     LoadFile();
     SetTable();
   }
@@ -25,7 +22,6 @@ public class QrCode {
       javax.swing.JOptionPane.showMessageDialog(null, "載入圖檔錯誤: " + Filename);
       image = null;// 如果錯誤的話顯示錯誤訊息
     }
-    friendQR = 1;
   }
 
   public void SetTable()// 設定版面

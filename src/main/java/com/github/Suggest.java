@@ -1,4 +1,4 @@
-package iecs;
+package github;
 
 import java.io.*;
 import java.util.Random;
